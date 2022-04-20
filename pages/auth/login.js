@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import Alert from '../../components/Alert';
 import Input from '../../components/Input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Login() {
   const [inputData, setInputData] = useState({ email: '', password: '' });
@@ -10,9 +10,14 @@ function Login() {
   const [message, setMessage] = useState(null);
   const router = useRouter();
 
+  useEffect(() => {
+    if (localStorage.getItem('user_token')) {
+      router.push('/dashboard');
+    }
+  }, []);
+
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
       await axios.get('/sanctum/csrf-cookie');
       const res = await axios.post('/api/login', {
@@ -49,7 +54,7 @@ function Login() {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen bg-blue-50">
+    <div className="flex items-center justify-center h-screen bg-blue-100">
       <div className="form w-80">
         <div className="py-2 form-header">
           <h1 className="text-2xl font-semibold text-center text-blue-400">

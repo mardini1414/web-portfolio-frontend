@@ -11,6 +11,14 @@ const nextConfig = {
         source: '/dashboard',
         destination: '/admin/dashboard',
       },
+      {
+        source: '/portfolio',
+        destination: '/admin/portfolio',
+      },
+      {
+        source: '/mycv',
+        destination: '/admin/mycv',
+      },
     ];
   },
 };
