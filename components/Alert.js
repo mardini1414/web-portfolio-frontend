@@ -1,17 +1,6 @@
-function Alert({ text, type }) {
-  let color;
-  switch (type) {
-    case 'danger':
-      color = 'red';
-      break;
-    case 'success':
-      color = 'green';
-      break;
-  }
+function Alert({ text }) {
   return (
-    <div
-      className={`w-full p-2 text-sm text-${color}-500 border border-${color}-500 rounded-md bg-${color}-500/10`}
-    >
+    <div className="w-full p-2 text-sm text-red-500 border border-red-500 rounded-md bg-red-500/30">
       {text}
     </div>
   );

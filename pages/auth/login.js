@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 function Login() {
   const [inputData, setInputData] = useState({ email: '', password: '' });
   const [error, setError] = useState({ email: null, password: null });
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const router = useRouter();
 
@@ -19,11 +20,14 @@ function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
+      setLoading(true);
       await axios.get('/sanctum/csrf-cookie');
       const res = await axios.post('/api/login', {
         email: inputData.email,
         password: inputData.password,
       });
+
+      setLoading(false);
 
       switch (res.status) {
         case 200:
@@ -38,15 +42,17 @@ function Login() {
         case 422:
           setMessage(null);
           setError({
-            email: res.data.errors.email || null,
-            password: res.data.errors.password || null,
+            email: res.data.errors.email,
+            password: res.data.errors.password,
           });
           break;
         default:
-          setMessage('Opps something when wrong!');
+          setMessage('something when wrong!');
           break;
       }
-    } catch (error) {}
+    } catch (error) {
+      setLoading(false);
+    }
   }
 
   function getInputData(e) {
@@ -65,21 +71,22 @@ function Login() {
           onSubmit={handleSubmit}
           className="grid gap-3 p-4 bg-white rounded-md shadow-sm form-body"
         >
-          {message && <Alert type={'danger'} text={message} />}
+          {message && <Alert text={message} />}
           <label htmlFor="email" className="text-gray-400">
             Email
           </label>
           <Input type={'email'} onChange={getInputData} />
-          {error.email && <div className="text-red-500">{error.email}</div>}
+          {error.email && <div className="text-red-500">{error.email[0]}</div>}
           <label htmlFor="password" className="text-gray-400">
             Password
           </label>
           <Input type={'password'} onChange={getInputData} />
           {error.password && (
-            <div className="text-red-500">{error.password}</div>
+            <div className="text-red-500">{error.password[0]}</div>
           )}
           <button
             type="submit"
+            disabled={loading}
             className="py-1 mt-2 text-white transition duration-300 bg-blue-400 rounded-md focus:outline-none hover:bg-blue-500"
           >
             Login

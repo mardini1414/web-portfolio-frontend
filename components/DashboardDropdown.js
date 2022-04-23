@@ -10,7 +10,7 @@ function DashboardDropdown() {
 
   useEffect(() => {
     getUser();
-  }, [name]);
+  }, []);
 
   async function getUser() {
     const res = await axios.get('/api/user', {
@@ -19,12 +19,13 @@ function DashboardDropdown() {
       },
     });
 
-    if (res.status === 401) {
+    if (!localStorage.getItem('user_token') || res.status === 401) {
       router.push('/login');
+      setName('');
       localStorage.clear();
+    } else {
+      setName(res.data);
     }
-
-    setName(res.data);
   }
 
   async function logout() {
@@ -48,7 +49,7 @@ function DashboardDropdown() {
         <Menu.Item>
           {({ active }) => (
             <MyLink
-              href="/portfolio"
+              href="/dashboard/portfolio"
               className={`rounded w-40 p-2 ${
                 active ? 'text-white bg-blue-500' : 'bg-white text-blue-500'
               }`}
@@ -63,7 +64,7 @@ function DashboardDropdown() {
               className={`rounded w-40 p-2 ${
                 active ? 'text-white bg-blue-500' : 'bg-white text-blue-500'
               }`}
-              href="/mycv"
+              href="/dashboard/mycv"
             >
               <i className="text-sm fa-solid fa-file-lines"></i> My cv
             </MyLink>

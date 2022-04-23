@@ -12,14 +12,17 @@ const nextConfig = {
         destination: '/admin/dashboard',
       },
       {
-        source: '/portfolio',
+        source: '/dashboard/portfolio',
         destination: '/admin/portfolio',
       },
       {
-        source: '/mycv',
+        source: '/dashboard/mycv',
         destination: '/admin/mycv',
       },
     ];
+  },
+  images: {
+    domains: ['portfolio-backend.test'],
   },
 };
 
