@@ -19,6 +19,14 @@ const nextConfig = {
         source: '/dashboard/mycv',
         destination: '/admin/mycv',
       },
+      {
+        source: '/dashboard/portfolio/:id',
+        destination: '/admin/portfolio/:id',
+      },
+      {
+        source: '/dashboard/portfolio/create',
+        destination: '/admin/portfolio/create',
+      },
     ];
   },
   images: {

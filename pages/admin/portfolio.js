@@ -1,5 +1,5 @@
 import DashboardLayout from '../../components/DashboardLayout';
-import Card from '../../components/Card';
+import DashboardCard from '../../components/DashboardCard';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -11,19 +11,30 @@ function portfolio() {
   }, []);
 
   async function getData() {
-    const res = await axios.get('api/portfolio');
-    console.log(res.data);
-    setData(res.data.data);
+    try {
+      const res = await axios.get('api/portfolio');
+      setData(res.data.data);
+    } catch (error) {
+      alert('Oops something when wrong!');
+    }
   }
 
   return (
     <DashboardLayout>
       <div className="py-10"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-2 sm:gap-x-2">
+      <div className="grid min-h-screen grid-cols-1 sm:grid-cols-3 gap-y-3 sm:gap-x-3 h-max">
         {data.map((el) => {
-          return <Card key={el.id} name={el.name} image={el.image} />;
+          return (
+            <DashboardCard
+              key={el.id}
+              id={el.id}
+              name={el.name}
+              image={el.image}
+            />
+          );
         })}
       </div>
+      <div className="py-10"></div>
     </DashboardLayout>
   );
 }

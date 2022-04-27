@@ -61,26 +61,23 @@ function Login() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-blue-100">
-      <div className="form w-80">
+      <div className="p-4 bg-white rounded-md shadow-sm w-80 form">
         <div className="py-2 form-header">
-          <h1 className="text-2xl font-semibold text-center text-blue-400">
+          <h1 className="text-2xl font-semibold text-center text-blue-500">
             Login
           </h1>
         </div>
-        <form
-          onSubmit={handleSubmit}
-          className="grid gap-3 p-4 bg-white rounded-md shadow-sm form-body"
-        >
-          {message && <Alert text={message} />}
+        {message && <Alert text={message} type="danger" />}
+        <form onSubmit={handleSubmit} className="grid gap-3 mt-4 form-body">
           <label htmlFor="email" className="text-gray-400">
             Email
           </label>
-          <Input type={'email'} onChange={getInputData} />
+          <Input type={'email'} name={'email'} onChange={getInputData} />
           {error.email && <div className="text-red-500">{error.email[0]}</div>}
           <label htmlFor="password" className="text-gray-400">
             Password
           </label>
-          <Input type={'password'} onChange={getInputData} />
+          <Input type={'password'} name={'password'} onChange={getInputData} />
           {error.password && (
             <div className="text-red-500">{error.password[0]}</div>
           )}
