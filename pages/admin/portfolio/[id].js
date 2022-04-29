@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Alert from '../../../components/Alert';
+import Image from 'next/image';
 import DashboardLayout from '../../../components/DashboardLayout';
 import Input from '../../../components/Input';
 import Spinner from '../../../components/Spinner';
@@ -25,6 +27,8 @@ function Edit({ data }) {
   const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+
+  const router = useRouter();
 
   function handlePreview(e) {
     if (e.target.files.length > 0) {
@@ -69,13 +73,12 @@ function Edit({ data }) {
 
       switch (res.status) {
         case 200:
+          router.push(`/dashboard/portfolio/${data.id}`);
           setError({ name: null, link: null, github: null, image: null });
-          setPreview(null);
           setMessage(res.data.message);
           break;
         case 401:
-          setMessage(res.data.message);
-          setError({ name: null, link: null, github: null, image: null });
+          router.push('/login');
           break;
         case 422:
           setMessage(null);
@@ -151,12 +154,12 @@ function Edit({ data }) {
             <label htmlFor="image" className="text-gray-500">
               <i className="text-gray-500 fa-solid fa-file"></i> Image
             </label>
-            <img
+            <Image
               src={preview || data.image}
               alt="preview"
-              width="100%"
-              height={100}
-              className="rounded-md"
+              width={400}
+              height={200}
+              className="object-cover object-center rounded-md"
             />
             <Input
               type={'file'}
@@ -174,7 +177,7 @@ function Edit({ data }) {
             <button
               type="submit"
               disabled={loading}
-              className="py-1 mt-2 text-white transition duration-300 bg-blue-400 rounded-md focus:outline-none hover:bg-blue-500"
+              className="py-1 mt-2 text-white transition duration-300 bg-blue-500 rounded-md focus:outline-none hover:bg-blue-400"
             >
               {loading ? <Spinner /> : 'Edit'}
             </button>

@@ -1,7 +1,11 @@
 import DashboardLayout from '../../components/DashboardLayout';
 
-function dashboard() {
-  return <DashboardLayout>dashboard</DashboardLayout>;
+function Dashboard() {
+  return (
+    <DashboardLayout>
+      <div className="h-screen"></div>
+    </DashboardLayout>
+  );
 }
 
-export default dashboard;
+export default Dashboard;

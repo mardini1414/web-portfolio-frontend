@@ -15,7 +15,7 @@ function Login() {
     if (localStorage.getItem('user_token')) {
       router.push('/dashboard');
     }
-  }, []);
+  });
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -84,7 +84,7 @@ function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="py-1 mt-2 text-white transition duration-300 bg-blue-400 rounded-md focus:outline-none hover:bg-blue-500"
+            className="py-1 mt-2 text-white transition duration-300 bg-blue-500 rounded-md focus:outline-none hover:bg-blue-400"
           >
             Login
           </button>

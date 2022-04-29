@@ -1,32 +1,15 @@
 import { Menu } from '@headlessui/react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import MyLink from './MyLink';
 import axios from 'axios';
 
 function DashboardDropdown() {
-  const [name, setName] = useState('');
   const router = useRouter();
 
   useEffect(() => {
-    getUser();
-  }, []);
-
-  async function getUser() {
-    const res = await axios.get('/api/user', {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('user_token')}`,
-      },
-    });
-
-    if (!localStorage.getItem('user_token') || res.status === 401) {
-      router.push('/login');
-      setName('');
-      localStorage.clear();
-    } else {
-      setName(res.data);
-    }
-  }
+    if (!localStorage.getItem('user_token')) router.push('/login');
+  });
 
   async function logout() {
     const res = await axios.delete('/api/logout', {
@@ -42,8 +25,8 @@ function DashboardDropdown() {
 
   return (
     <Menu>
-      <Menu.Button className="text-lg text-white">
-        {name} <i className="text-sm fa-solid fa-angle-down"></i>
+      <Menu.Button className="text-lg text-blue-500">
+        {'Mardini'} <i className="text-sm fa-solid fa-angle-down"></i>
       </Menu.Button>
       <Menu.Items className="absolute grid gap-2 p-1 bg-white rounded-md shadow-md right-4 top-10">
         <Menu.Item>
@@ -66,7 +49,7 @@ function DashboardDropdown() {
               }`}
               href="/dashboard/mycv"
             >
-              <i className="text-sm fa-solid fa-file-lines"></i> My cv
+              <i className="text-sm fa-solid fa-file-pdf"></i> My cv
             </MyLink>
           )}
         </Menu.Item>
