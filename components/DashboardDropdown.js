@@ -26,7 +26,7 @@ function DashboardDropdown() {
   return (
     <Menu>
       <Menu.Button className="text-lg text-blue-500">
-        {'Mardini'} <i className="text-sm fa-solid fa-angle-down"></i>
+        Mardini <i className="text-sm fa-solid fa-angle-down"></i>
       </Menu.Button>
       <Menu.Items className="absolute grid gap-2 p-1 bg-white rounded-md shadow-md right-4 top-10">
         <Menu.Item>

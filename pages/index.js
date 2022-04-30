@@ -1,5 +1,12 @@
+import Navbar from '../components/Navbar';
+
 function index() {
-  return <div className="bg-blue-100">index</div>;
+  return (
+    <>
+      <Navbar />
+      <div className="container px-4 mx-auto bg-gray-50"></div>
+    </>
+  );
 }
 
 export default index;
