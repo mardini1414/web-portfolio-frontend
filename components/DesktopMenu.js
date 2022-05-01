@@ -26,7 +26,7 @@ function DesktopMenu() {
         </li>
         <li>
           <div>
-            <button className="px-2 py-1 text-xs text-white duration-500 bg-yellow-500 rounded hover:bg-yellow-400">
+            <button className="px-2 py-1 text-xs text-white duration-500 bg-orange-500 rounded hover:bg-orange-400">
               <i className="text-xs fa-solid fa-download"></i> download cv
             </button>
           </div>

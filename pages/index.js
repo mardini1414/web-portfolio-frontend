@@ -1,10 +1,19 @@
+import About from '../components/About';
+import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
+import Portfolio from '../components/Portfolio';
 
 function index() {
   return (
     <>
-      <Navbar />
-      <div className="container px-4 mx-auto bg-gray-50"></div>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <About />
+        <Portfolio />
+      </main>
     </>
   );
 }
