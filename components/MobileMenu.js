@@ -7,7 +7,7 @@ function MobileMenu() {
         <Menu.Button>
           <i className="text-lg text-black fa-solid fa-bars"></i>
         </Menu.Button>
-        <Menu.Items className="absolute top-0 left-0 flex flex-col w-full h-screen gap-2 text-center bg-gradient-to-b from-white to-pink-500/10 backdrop-blur-sm">
+        <Menu.Items className="absolute top-0 left-0 z-50 flex flex-col w-full h-screen gap-2 text-center bg-gradient-to-b from-white to-pink-500/10 backdrop-blur-sm">
           <Menu.Item>
             <Menu.Button className="p-4 text-right">
               <i className="text-lg text-black fa-solid fa-times"></i>
