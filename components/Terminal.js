@@ -60,8 +60,10 @@ function Terminal() {
           <span ref={typedRef1}></span>
           <br />
           <span className={show ? '' : 'invisible'}>
-            ['HTML', 'CSS', 'Javascript', 'PHP', 'MySQL', 'Bootstrap', 'Tailwind
-            css', 'React js', 'Laravel', 'Inertia js', 'Rest api', 'Git']
+            [&apos;HTML&apos;, &apos;CSS&apos;, &apos;Javascript&apos;,
+            &apos;PHP&apos;, &apos;MySQL&apos;, &apos;Bootstrap&apos;,
+            &apos;Tailwind css&apos;, &apos;React js&apos;, &apos;Laravel&apos;,
+            &apos;Inertia js&apos;, &apos;Rest api&apos;, &apos;Git&apos;]
           </span>
           <br />
           <span className={show ? '' : 'invisible'}>

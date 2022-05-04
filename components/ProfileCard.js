@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 function ProfileCard() {
   return (
-    <div className="relative max-w-md p-4 text-center md:p-0 bottom-12 md:-bottom-10 md:-mr-4 md:text-left">
-      <div className="bg-white rounded-md shadow-md">
-        <header className="flex flex-col items-center gap-4 p-4 border-b border-gray-400 md:flex-row bg-gray-50">
+    <div className="relative max-w-md p-4 text-center lg:p-0 bottom-12 lg:-bottom-10 lg:-mr-4 lg:text-left">
+      <div className="overflow-hidden bg-white rounded-md shadow-md">
+        <header className="flex flex-col items-center gap-4 p-4 border-b border-gray-400 lg:flex-row bg-gray-50">
           <Image
             src={Profile}
             alt="profile"

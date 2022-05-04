@@ -2,8 +2,19 @@ import About from '../components/About';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import Portfolio from '../components/Portfolio';
+import axios from 'axios';
 
-function index() {
+export async function getServerSideProps() {
+  const res = await axios.get('api/portfolio');
+
+  return {
+    props: {
+      data: res.data.data.reverse(),
+    },
+  };
+}
+
+function index({ data }) {
   return (
     <>
       <header>
@@ -12,7 +23,7 @@ function index() {
       <main>
         <Hero />
         <About />
-        <Portfolio />
+        <Portfolio data={data} />
       </main>
     </>
   );
