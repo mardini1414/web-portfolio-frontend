@@ -1,6 +1,11 @@
 import { Menu } from '@headlessui/react';
 
 function MobileMenu() {
+  function scroll(id) {
+    const el = document.getElementById(id);
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <div className="md:hidden">
       <Menu>
@@ -14,16 +19,36 @@ function MobileMenu() {
             </Menu.Button>
           </Menu.Item>
           <Menu.Item>
-            <div className="px-4 py-1 font-semibold">Home</div>
+            <div
+              className="px-4 py-1 font-semibold"
+              onClick={() => scroll('hero')}
+            >
+              Home
+            </div>
           </Menu.Item>
           <Menu.Item>
-            <div className="px-4 py-1 font-semibold">About</div>
+            <div
+              className="px-4 py-1 font-semibold"
+              onClick={() => scroll('about')}
+            >
+              About
+            </div>
           </Menu.Item>
           <Menu.Item>
-            <div className="px-4 py-1 font-semibold">Portfolio</div>
+            <div
+              className="px-4 py-1 font-semibold"
+              onClick={() => scroll('portfolio')}
+            >
+              Portfolio
+            </div>
           </Menu.Item>
           <Menu.Item>
-            <div className="px-4 py-1 font-semibold">Contact</div>
+            <div
+              className="px-4 py-1 font-semibold"
+              onClick={() => scroll('contact')}
+            >
+              Contact
+            </div>
           </Menu.Item>
           <Menu.Item>
             <div className="px-4 py-1">

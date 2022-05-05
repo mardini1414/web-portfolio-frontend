@@ -3,8 +3,11 @@ import Link from 'next/link';
 
 function Portfolio({ data }) {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4 mx-auto h-max bg-gradient-to-b from-blue-500/20 to-white">
-      <h2 className="my-4 font-serif text-3xl font-black text-black sm:text-4xl md:text-6xl">
+    <section
+      id="portfolio"
+      className="flex flex-col items-center justify-center min-h-screen px-4 py-8 mx-auto h-max bg-gradient-to-b from-blue-500/20 to-white"
+    >
+      <h2 className="pt-4 my-6 font-serif text-3xl font-black text-black sm:text-4xl md:text-6xl">
         Portfolio
       </h2>
       <div className="grid grid-cols-1 gap-12 mt-4 sm:gap-14 md:gap-y-16">

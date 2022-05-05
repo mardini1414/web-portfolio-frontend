@@ -15,17 +15,17 @@ function Card(props) {
         />
       </div>
       <div className="flex items-center justify-between px-2 pb-2">
-        <h3 className="text-gray-700">{name}</h3>
+        <h3 className="text-sm font-semibold text-gray-700">{name}</h3>
         <div>
-          <Link href={`/portfolio/${id}`} passHref={true}>
-            <i className="text-xs text-gray-400 cursor-pointer fa-solid fa-eye"></i>
-          </Link>
           <a href={link} target="_blank" rel="noreferrer">
-            <i className="mx-2 text-xs text-gray-400 fa-solid fa-link"></i>
+            <i className="text-xs text-gray-600 duration-300 cursor-pointer fa-solid fa-eye hover:text-gray-700"></i>
           </a>
           <a href={github} target="_blank" rel="noreferrer">
-            <i className="text-xs text-gray-400 fa-brands fa-github"></i>
+            <i className="mx-2 text-xs text-gray-600 duration-300 fa-brands fa-github hover:text-gray-700"></i>
           </a>
+          <Link href={`/portfolio/${id}`} passHref={true}>
+            <i className="text-xs text-gray-600 duration-300 cursor-pointer fa-solid fa-circle-info hover:text-gray-700"></i>
+          </Link>
         </div>
       </div>
     </div>

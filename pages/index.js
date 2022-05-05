@@ -3,6 +3,8 @@ import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import Portfolio from '../components/Portfolio';
 import axios from 'axios';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 export async function getServerSideProps() {
   const res = await axios.get('api/portfolio');
@@ -24,7 +26,9 @@ function index({ data }) {
         <Hero />
         <About />
         <Portfolio data={data} />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 }

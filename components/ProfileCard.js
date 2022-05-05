@@ -13,7 +13,7 @@ function ProfileCard() {
             height={60}
             className="rounded-full"
           />
-          <h2 className="font-bold text-black">Mardini</h2>
+          <h2 className="font-bold text-gray-800">Mardini</h2>
         </header>
         <div className="p-4">
           <p className="font-normal text-gray-400">

@@ -35,10 +35,10 @@ function Show({ data }) {
               <h3 className="text-orange-500">{data.name}</h3>
               <div>
                 <a href={data.link} target="_blank" rel="noreferrer">
-                  <i className="mx-2 text-xs text-gray-400 fa-solid fa-link"></i>
+                  <i className="mx-2 text-xs text-gray-600 duration-300 fa-solid fa-eye hover:text-gray-700"></i>
                 </a>
                 <a href={data.github} target="_blank" rel="noreferrer">
-                  <i className="text-xs text-gray-400 fa-brands fa-github"></i>
+                  <i className="text-xs text-gray-600 duration-300 fa-brands fa-github hover:text-gray-700"></i>
                 </a>
               </div>
             </div>
