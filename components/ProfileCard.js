@@ -9,8 +9,8 @@ function ProfileCard() {
           <Image
             src={Profile}
             alt="profile"
-            width={80}
-            height={80}
+            width={60}
+            height={60}
             className="rounded-full"
           />
           <h2 className="font-bold text-black">Mardini</h2>

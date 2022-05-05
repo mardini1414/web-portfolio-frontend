@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Card(props) {
-  const { name, link, github, description, image } = props;
+  const { id, name, link, github, description, image } = props;
   return (
-    <div className="w-full overflow-hidden bg-white rounded-md shadow-xl">
+    <div className="w-full overflow-hidden bg-white rounded-md shadow-md">
       <div className="rounded-md">
         <Image
           src={image}
@@ -14,14 +15,16 @@ function Card(props) {
         />
       </div>
       <div className="flex items-center justify-between px-2 pb-2">
-        <h3 className="text-orange-500">{name}</h3>
+        <h3 className="text-gray-700">{name}</h3>
         <div>
-          <i className="fa-solid fa-eye"></i>
-          <a href={link} target="_blank">
-            <i className="mx-2 fa-solid fa-link"></i>
+          <Link href={`/portfolio/${id}`} passHref={true}>
+            <i className="text-xs text-gray-400 cursor-pointer fa-solid fa-eye"></i>
+          </Link>
+          <a href={link} target="_blank" rel="noreferrer">
+            <i className="mx-2 text-xs text-gray-400 fa-solid fa-link"></i>
           </a>
-          <a href={github} target="_blank">
-            <i className="fa-brands fa-github"></i>
+          <a href={github} target="_blank" rel="noreferrer">
+            <i className="text-xs text-gray-400 fa-brands fa-github"></i>
           </a>
         </div>
       </div>

@@ -48,7 +48,7 @@ function Terminal() {
   });
 
   return (
-    <div className="max-w-lg rounded-md shadow-md h-80 md:h-96 bg-slate-800">
+    <div className="max-w-xl rounded-md shadow-md h-80 md:h-96 bg-slate-800">
       <header className="flex gap-1 px-2 py-4 border-b border-slate-500">
         <div className="p-1 bg-red-500 rounded-full"></div>
         <div className="p-1 bg-yellow-500 rounded-full"></div>
