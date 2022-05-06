@@ -3,6 +3,7 @@ import axios from 'axios';
 import '@fortawesome/fontawesome-free/css/all.css';
 import NextNProgress from 'nextjs-progressbar';
 import nprogress from 'nprogress';
+import 'animate.css';
 
 nprogress.configure({ showSpinner: false });
 

@@ -17,10 +17,10 @@ function ProfileCard() {
         </header>
         <div className="p-4">
           <p className="font-normal text-gray-400">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
-            omnis voluptatem ut quas quae consequatur modi a voluptate hic! Sint
-            eligendi eum quisquam delectus exercitationem cumque, rem maxime hic
-            aliquam!
+            I&apos;m Mardini born in Pandeglang Banten on June 6, 1997, have
+            honest personality, easy to adapt and happy to learn new things and
+            can team work. Love things about programming and everyday life I am
+            learning to make a website.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Card from './Card';
 import Link from 'next/link';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function Portfolio({ data }) {
   return (
@@ -7,9 +8,11 @@ function Portfolio({ data }) {
       id="portfolio"
       className="flex flex-col items-center justify-center min-h-screen px-4 py-8 mx-auto h-max bg-gradient-to-b from-blue-500/20 to-white"
     >
-      <h2 className="pt-4 my-6 font-serif text-3xl font-black text-black sm:text-4xl md:text-6xl">
-        Portfolio
-      </h2>
+      <AnimationOnScroll animateIn="animate__fadeIn">
+        <h2 className="pt-4 my-6 font-serif text-3xl font-black text-black sm:text-4xl md:text-6xl">
+          Portfolio
+        </h2>
+      </AnimationOnScroll>
       <div className="grid grid-cols-1 gap-12 mt-4 sm:gap-14 md:gap-y-16">
         {data.map((el, index) => {
           if (index < 3) {

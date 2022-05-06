@@ -1,9 +1,23 @@
 import { Menu } from '@headlessui/react';
+import axios from 'axios';
 
 function MobileMenu() {
   function scroll(id) {
     const el = document.getElementById(id);
     el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  async function download() {
+    const res = await axios.get('api/download/cv', {
+      responseType: 'blob',
+      headers: { Accept: 'application/pdf' },
+    });
+    const url = window.URL.createObjectURL(new Blob([res.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'mycv.pdf');
+    document.body.appendChild(link);
+    link.click();
   }
 
   return (
@@ -52,7 +66,10 @@ function MobileMenu() {
           </Menu.Item>
           <Menu.Item>
             <div className="px-4 py-1">
-              <button className="px-4 py-1 bg-orange-500 rounded-md text-blue-50">
+              <button
+                className="px-4 py-1 bg-orange-500 rounded-md text-blue-50"
+                onClick={download}
+              >
                 <i className="text-xs fa-solid fa-download"></i> download cv
               </button>
             </div>

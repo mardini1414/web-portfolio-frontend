@@ -11,10 +11,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@headlessui/react": "^1.5.0",
+    "animate.css": "^4.1.1",
     "axios": "^0.26.1",
     "next": "12.1.5",
     "nextjs-progressbar": "^0.0.14",
     "react": "18.0.0",
+    "react-animation-on-scroll": "^5.1.0",
     "react-dom": "18.0.0",
     "typed.js": "^2.0.12"
   },
