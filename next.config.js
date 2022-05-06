@@ -33,7 +33,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['portfolio-backend.test'],
+    domains: ['portfolio-backend.test', 'portfolio-backend.000webhostapp.com'],
   },
 };
 

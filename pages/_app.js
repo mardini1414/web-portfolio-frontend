@@ -7,7 +7,7 @@ import 'animate.css';
 
 nprogress.configure({ showSpinner: false });
 
-axios.defaults.baseURL = 'http://portfolio-backend.test';
+axios.defaults.baseURL = 'http://portfolio-backend.000webhostapp.com';
 axios.defaults.withCredentials = true;
 axios.defaults.validateStatus = (status) => status < 500;
 

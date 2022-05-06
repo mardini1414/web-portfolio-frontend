@@ -4,7 +4,7 @@ import Link from 'next/link';
 function Card(props) {
   const { id, name, link, github, description, image } = props;
   return (
-    <div className="w-full overflow-hidden bg-white rounded-md shadow-md">
+    <div className="w-full max-w-3xl overflow-hidden bg-white rounded-md shadow-md">
       <div className="rounded-md">
         <Image
           src={image}

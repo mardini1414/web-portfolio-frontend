@@ -17,14 +17,19 @@ function Portfolio({ data }) {
         {data.map((el, index) => {
           if (index < 3) {
             return (
-              <Card
+              <AnimationOnScroll
                 key={el.id}
-                id={el.id}
-                name={el.name}
-                image={el.image}
-                link={el.link}
-                github={el.github}
-              />
+                delay={100 * index}
+                animateIn="animate__fadeInUp"
+              >
+                <Card
+                  id={el.id}
+                  name={el.name}
+                  image={el.image}
+                  link={el.link}
+                  github={el.github}
+                />
+              </AnimationOnScroll>
             );
           }
         })}
