@@ -7,34 +7,28 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: 'https://web-portfolio-frontend.vercel.app/login',
-        destination: 'https://web-portfolio-frontend.vercel.app/auth/Login',
+        source: '/login',
+        destination: '/auth/login',
       },
       {
-        source: 'https://web-portfolio-frontend.vercel.app/dashboard',
-        destination:
-          'https://web-portfolio-frontend.vercel.app/admin/Dashboard',
+        source: '/dashboard',
+        destination: '/admin/dashboard',
       },
       {
-        source: 'https://web-portfolio-frontend.vercel.app/dashboard/portfolio',
-        destination:
-          'https://web-portfolio-frontend.vercel.app/admin/Portfolio',
+        source: '/dashboard/portfolio',
+        destination: '/admin/portfolio',
       },
       {
-        source: 'https://web-portfolio-frontend.vercel.app/dashboard/mycv',
-        destination: 'https://web-portfolio-frontend.vercel.app/admin/Mycv',
+        source: '/dashboard/mycv',
+        destination: '/admin/Mycv',
       },
       {
-        source:
-          'https://web-portfolio-frontend.vercel.app/dashboard/portfolio/:id',
-        destination:
-          'https://web-portfolio-frontend.vercel.app/admin/portfolio/:id',
+        source: '/dashboard/portfolio/:id',
+        destination: '/admin/portfolio/:id',
       },
       {
-        source:
-          'https://web-portfolio-frontend.vercel.app/dashboard/portfolio/create',
-        destination:
-          'https://web-portfolio-frontend.vercel.app/admin/portfolio/Create',
+        source: '/dashboard/portfolio/create',
+        destination: '/admin/portfolio/create',
       },
     ];
   },
