@@ -22,10 +22,18 @@ function Login() {
     try {
       setLoading(true);
       await axios.get('/sanctum/csrf-cookie');
-      const res = await axios.post('/api/login', {
-        email: inputData.email,
-        password: inputData.password,
-      });
+      const res = await axios.post(
+        '/api/login',
+        {
+          email: inputData.email,
+          password: inputData.password,
+        },
+        {
+          headers: {
+            Accept: 'application/json',
+          },
+        }
+      );
 
       setLoading(false);
 

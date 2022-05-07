@@ -4,9 +4,6 @@ const nextConfig = {
   devIndicators: {
     buildActivity: false,
   },
-  httpAgentOptions: {
-    keepAlive: false,
-  },
   async rewrites() {
     return [
       {
