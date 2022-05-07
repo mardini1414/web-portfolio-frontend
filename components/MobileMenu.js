@@ -21,7 +21,7 @@ function MobileMenu() {
   }
 
   return (
-    <div className="md:hidden">
+    <div className="z-30 md:hidden">
       <Menu>
         <Menu.Button>
           <i className="text-lg text-black fa-solid fa-bars"></i>
