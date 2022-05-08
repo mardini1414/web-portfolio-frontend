@@ -31,6 +31,7 @@ function Login() {
         {
           headers: {
             Accept: 'application/json',
+            Authorization: 'Bearer',
           },
         }
       );
