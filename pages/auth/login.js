@@ -19,22 +19,19 @@ function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('email', inputData.email);
+    formData.append('password', inputData.password);
     try {
       setLoading(true);
       await axios.get('/sanctum/csrf-cookie');
-      const res = await axios.post(
-        '/api/login',
-        {
-          email: inputData.email,
-          password: inputData.password,
+      const res = await axios('/api/login', {
+        method: 'POST',
+        data: formData,
+        headers: {
+          'Content-Type': 'multipart/form-data',
         },
-        {
-          headers: {
-            Accept: 'application/json',
-            Authorization: 'Bearer',
-          },
-        }
-      );
+      });
 
       setLoading(false);
 
@@ -61,7 +58,6 @@ function Login() {
       }
     } catch (error) {
       setLoading(false);
-      console.log(error);
     }
   }
 

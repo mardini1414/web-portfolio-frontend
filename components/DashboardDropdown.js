@@ -12,14 +12,19 @@ function DashboardDropdown() {
   });
 
   async function logout() {
-    const res = await axios.delete('/api/logout', {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('user_token')}`,
-      },
-    });
-    if (res.status === 200) {
-      localStorage.removeItem('user_token');
-      router.push('/login');
+    try {
+      const res = await axios('/api/logout', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('user_token')}`,
+        },
+      });
+      if (res.status === 200) {
+        localStorage.removeItem('user_token');
+        router.push('/login');
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 

@@ -58,13 +58,13 @@ function Create() {
       formData.append('image', image);
 
       setLoading(true);
-
-      const res = await axios({
-        url: 'api/portfolio',
+      await axios.get('/sanctum/csrf-cookie');
+      const res = await axios('/api/portfolio', {
         method: 'POST',
-        data: formData,
+        data: JSON.stringify(formData),
         headers: {
           Authorization: `Bearer ${localStorage.getItem('user_token')}`,
+          'Content-Type': 'application/json',
           Accept: 'application/json',
         },
       });
