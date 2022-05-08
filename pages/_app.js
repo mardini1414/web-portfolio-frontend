@@ -8,8 +8,8 @@ import 'animate.css';
 nprogress.configure({ showSpinner: false });
 
 axios.defaults.baseURL = 'https://portfolioweb-backend.000webhostapp.com/';
-axios.defaults.withCredentials = true;
-axios.defaults.validateStatus = (status) => status < 500;
+axios.defaults.withCredentials = false;
+axios.defaults.validateStatus = (status) => true;
 
 function MyApp({ Component, pageProps }) {
   return (
