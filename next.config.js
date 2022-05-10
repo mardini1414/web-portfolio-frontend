@@ -4,6 +4,9 @@ const nextConfig = {
   devIndicators: {
     buildActivity: false,
   },
+  images: {
+    domains: ['portfolioweb-backend.000webhostapp.com'],
+  },
   async rewrites() {
     return [
       {
@@ -31,9 +34,6 @@ const nextConfig = {
         destination: '/admin/portfolio/create',
       },
     ];
-  },
-  images: {
-    domains: ['portfolio-backend.000webhostapp.com'],
   },
 };
 

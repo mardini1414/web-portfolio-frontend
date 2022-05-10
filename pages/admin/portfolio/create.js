@@ -6,6 +6,7 @@ import Image from 'next/image';
 import axios from 'axios';
 import Spinner from '../../../components/Spinner';
 import Alert from '../../../components/Alert';
+import { data } from 'autoprefixer';
 
 function Create() {
   const [inputData, setInputData] = useState({
@@ -58,8 +59,7 @@ function Create() {
       formData.append('image', image);
 
       setLoading(true);
-      await axios.get('/sanctum/csrf-cookie');
-      const res = await axios('/api/portfolio', {
+      const res = await axios('api/portfolio', {
         method: 'POST',
         data: formData,
         headers: {
@@ -77,7 +77,7 @@ function Create() {
           setInputData({ name: '', link: '', github: '', image: '' });
           break;
         case 401:
-          router.push('/login');
+          localStorage.removeItem('user_token');
           break;
         case 422:
           setMessage(null);
@@ -89,6 +89,7 @@ function Create() {
       }
     } catch (error) {
       setLoading(false);
+      console.log(error.message);
     }
     setLoading(false);
   }
