@@ -32,7 +32,9 @@ function Show({ data }) {
               className="block object-cover object-center "
             />
             <div className="flex items-center justify-between px-2 pb-1">
-              <h3 className="text-orange-500">{data.name}</h3>
+              <h3 className="text-sm font-semibold text-gray-700">
+                {data.name}
+              </h3>
               <div>
                 <a href={data.link} target="_blank" rel="noreferrer">
                   <i className="mx-2 text-xs text-gray-600 duration-300 fa-solid fa-eye hover:text-gray-700"></i>
