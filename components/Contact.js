@@ -8,12 +8,13 @@ function Contact() {
     >
       <div className="relative z-10">
         <h2 className="text-center">Let&apos;s talk!</h2>
-        <div className="flex items-center justify-center gap-8 mt-8">
+        <div className="flex items-center justify-center mt-8">
           <AnimationOnScroll animateIn="animate__zoomIn">
             <a
               href="mailto:mardini1414@gmail.com"
               target="_blank"
               rel="noreferrer"
+              className="mx-4"
             >
               <i className="text-2xl fa-regular fa-envelope"></i>
             </a>
@@ -23,6 +24,7 @@ function Contact() {
               href="https://wa.me/+6281385501120"
               target="_blank"
               rel="noreferrer"
+              className="mx-4"
             >
               <i className="text-2xl fa-brands fa-whatsapp"></i>
             </a>
@@ -32,6 +34,7 @@ function Contact() {
               href="https://facebook.com/mardini.mardini.986"
               target="_blank"
               rel="noreferrer"
+              className="mx-4"
             >
               <i className="text-2xl fa-brands fa-facebook"></i>
             </a>
@@ -41,6 +44,7 @@ function Contact() {
               href="https://instagram.com/mardini1414"
               target="_blank"
               rel="noreferrer"
+              className="mx-4"
             >
               <i className="text-2xl fa-brands fa-instagram"></i>
             </a>
